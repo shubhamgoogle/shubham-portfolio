@@ -459,7 +459,7 @@ export const portfolioData = {
     systems: "Key Systems: 1) GraphRAG with Spanner/BQ Graph  2) Database MCP Servers  3) BigQuery CDC Lakehouse  4) Agent Observability Framework",
     skills: "Core: BigQuery, Cloud Spanner, PySpark, LangGraph, Model Context Protocol (MCP), OpenTelemetry, FastAPI, Cloud Run",
     exp: "Google (Present) — Engineering distributed data systems & autonomous agentic workflows.",
-    metrics: "Multi-TB+ data scales | Sub-second GraphRAG P99 (<320ms) | 100% MCP tool validation | OpenTelemetry full-trace coverage",
+    metrics: "Multi-TB+ scalable data pipelines | Production-ready Agentic AI platforms | 100% MCP tool validation | OpenTelemetry full-trace coverage",
     contact: "Email: shubhamchawla10@gmail.com | LinkedIn: linkedin.com/in/shubhamchawla10/ | GitHub: github.com/shubhamgoogle"
   }
 };

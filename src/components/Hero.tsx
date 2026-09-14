@@ -103,12 +103,12 @@ export default function Hero() {
               {/* Key Scale Metric Chips */}
               <div className="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-gray-100 font-mono text-center">
                 <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
-                  <div className="text-sm font-bold text-[#007a7a]">Multi-TB+</div>
-                  <div className="text-[10px] text-gray-500 mt-0.5">Lakehouse Scale</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#007a7a]">Production-Ready</div>
+                  <div className="text-[10px] text-gray-500 mt-0.5 leading-tight">Agentic AI Platforms</div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
-                  <div className="text-sm font-bold text-[#007a7a]">&lt; 320ms</div>
-                  <div className="text-[10px] text-gray-500 mt-0.5">GraphRAG P99</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#007a7a]">Multi-TB+ Scale</div>
+                  <div className="text-[10px] text-gray-500 mt-0.5 leading-tight">Scalable Data Pipelines</div>
                 </div>
               </div>
             </div>

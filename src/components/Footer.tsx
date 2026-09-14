@@ -21,7 +21,7 @@ export default function Footer() {
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-pink-50/80 border border-purple-200/60 text-[11px] text-gray-700 font-medium shadow-2xs">
               <GeminiIcon className="w-3.5 h-3.5" />
               <span>
-                Built with{" "}
+                Proudly Built with{" "}
                 <span className="font-semibold bg-gradient-to-r from-[#4E82EE] via-[#9B72CF] to-[#D96570] bg-clip-text text-transparent">
                   Gemini
                 </span>

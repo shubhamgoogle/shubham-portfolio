@@ -61,9 +61,7 @@ export default function Hero() {
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="w-full max-w-sm bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow relative">
               {/* Subtle top corner decoration */}
-              <div className="absolute top-4 right-4 text-xs font-mono text-[#007a7a] bg-[#007a7a]/10 px-2 py-0.5 rounded">
-                Verified
-              </div>
+
 
               {/* Profile Header */}
               <div className="flex items-center gap-4 mb-5">

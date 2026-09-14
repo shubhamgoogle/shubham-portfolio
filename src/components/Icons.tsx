@@ -65,16 +65,60 @@ export function CricketIcon({ className = "w-4 h-4" }: { className?: string }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Cricket"
+      aria-label="Cricket Bat and Ball"
     >
-      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4-1 1-4 9.5-9.5z" />
-      <path d="M6 18l-3 3" />
-      <circle cx="18" cy="18" r="3" fill="currentColor" fillOpacity="0.2" />
+      {/* Bat Cane Handle with grip wraps */}
+      <path d="M17.5 2.5l3 3" strokeWidth="2.4" />
+      <path d="M18.8 2.2l-1 1M20.2 3.6l-1 1" strokeWidth="0.9" />
+
+      {/* Flat Willow Blade with shoulders and rounded toe */}
+      <path
+        d="M15.5 7.5l-1.8-1.8c-.4-.4-1-.4-1.4 0L3.8 14.2c-.4.4-.4 1 0 1.4l2.6 2.6c.4.4 1 .4 1.4 0l8.5-8.5c.4-.4.4-1 0-1.4l-.8-.8z"
+        fill="currentColor"
+        fillOpacity="0.18"
+      />
+      {/* Bat center spine line */}
+      <path d="M14.5 6.5L5.5 15.5" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
+
+      {/* Cricket Ball with prominent seam and stitches */}
+      <circle cx="18" cy="17.5" r="3.5" fill="currentColor" fillOpacity="0.25" />
+      <path d="M15.5 15c1.5 1.5 3.5 3.5 5 5" strokeWidth="1.4" />
+      <path d="M16 17.5l1.5-1.5M18 19.5l1.5-1.5" strokeWidth="1" />
+    </svg>
+  );
+}
+
+export function CricketWicketIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Cricket Wickets and Ball"
+    >
+      {/* 2 Bails on top */}
+      <path d="M4 4h7" strokeWidth="2.2" />
+      <path d="M13 4h7" strokeWidth="2.2" />
+      {/* 3 Stumps */}
+      <path d="M6 4v16" strokeWidth="2" />
+      <path d="M12 4v16" strokeWidth="2" />
+      <path d="M18 4v16" strokeWidth="2" />
+      {/* Crease line */}
+      <path d="M2 20h20" strokeWidth="1.6" />
+      {/* Cricket Ball with seam */}
+      <circle cx="18" cy="13.5" r="3.2" fill="currentColor" fillOpacity="0.25" />
+      <path d="M15.8 11.3c1 1 2.2 2.2 3.4 3.4" strokeWidth="1.2" />
     </svg>
   );
 }

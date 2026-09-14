@@ -76,6 +76,7 @@ export const portfolioData = {
       photos: {
         triathlon: "https://photos.app.goo.gl/FqYPM5RDYxY5o2YK9",
         cricket: "https://photos.app.goo.gl/39nvdnAWToizzqgE6",
+        travel: "https://photos.app.goo.gl/LwZofd9qDihH6GEZ7",
       },
       visitedCountries: [
         { name: "India", flag: "🇮🇳", region: "Asia" },

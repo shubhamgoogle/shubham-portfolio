@@ -326,8 +326,13 @@ export default function BeyondCodePage() {
                 </div>
               </a>
 
-              {/* Photo Card 4: Around the World Travel */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs flex flex-col group">
+              {/* Photo Card 4: Around the World Google Photos Album */}
+              <a
+                href="https://photos.app.goo.gl/LwZofd9qDihH6GEZ7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-md hover:border-[#007a7a]/40 transition-all flex flex-col group cursor-pointer"
+              >
                 <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-cyan-100/60 flex flex-col items-center justify-center text-gray-500 p-5 relative overflow-hidden">
                   <div className="w-12 h-12 rounded-full bg-white shadow-xs flex items-center justify-center text-[#007a7a] mb-2.5 group-hover:scale-110 transition-transform">
                     <Globe className="w-6 h-6" />
@@ -336,25 +341,25 @@ export default function BeyondCodePage() {
                   <span className="text-[11px] text-gray-500 mt-0.5">11 Countries Explored</span>
 
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs border border-teal-200 text-[#007a7a] text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <Plane className="w-3 h-3" />
-                    <span>Travel</span>
+                    <GooglePhotosIcon className="w-3 h-3" />
+                    <span>Album</span>
                   </div>
                 </div>
                 <div className="p-4 border-t border-gray-100 flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="text-xs font-bold text-gray-900">
-                      Global Exploration
+                    <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors">
+                      Travel Photos
                     </h4>
                     <p className="text-[11px] text-gray-500 mt-1 leading-relaxed">
-                      Traveling across 11 countries &amp; 4 continents, experiencing unique cultures and landscapes.
+                      Captures from 11 countries across 4 continents and memorable global journeys.
                     </p>
                   </div>
                   <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-[#007a7a]">
-                    <span>11 Countries Visited</span>
-                    <Globe className="w-3.5 h-3.5" />
+                    <span>Open Google Photos</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

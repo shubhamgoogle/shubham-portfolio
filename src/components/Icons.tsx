@@ -43,6 +43,42 @@ export function MediumIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
+export function StravaIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Strava"
+    >
+      <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7.23 13.828h4.169" />
+    </svg>
+  );
+}
+
+export function CricketIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Cricket"
+    >
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4-1 1-4 9.5-9.5z" />
+      <path d="M6 18l-3 3" />
+      <circle cx="18" cy="18" r="3" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+}
+
 export function GoogleLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="Google">

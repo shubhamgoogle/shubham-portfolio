@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { portfolioData } from "@/data/portfolio";
 import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon, MediumIcon } from "@/components/Icons";
@@ -16,8 +17,12 @@ export default function Footer() {
               {portfolioData.personal.name}
             </span>
           </p>
-          <p className="text-gray-400 text-[11px]">
-            AI &amp; Data Engineer @ Google
+          <p className="text-gray-400 text-[11px] flex items-center gap-2 justify-center sm:justify-start">
+            <span>AI &amp; Data Engineer @ Google</span>
+            <span>•</span>
+            <Link href="/beyond-code" className="hover:text-[#007a7a] transition-colors underline decoration-dotted">
+              Beyond Code
+            </Link>
           </p>
         </div>
 

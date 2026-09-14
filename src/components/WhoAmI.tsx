@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { GoogleLogo, CarelonLogo, DeloitteLogo, CognizantLogo } from "@/components/Icons";
-import { Building2 } from "lucide-react";
+import { Building2, ArrowUpRight } from "lucide-react";
 
 export default function WhoAmI() {
   const companies = [
@@ -49,6 +50,16 @@ export default function WhoAmI() {
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
               My engineering focuses on building high-throughput Big Data lakehouses and operationalizing production-grade Agentic AI workflows—partnering with major banks and global financial institutions to deliver scalable, secure, and deterministic architectures.
             </p>
+
+            <div className="pt-1">
+              <Link
+                href="/beyond-code"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#007a7a] hover:underline underline-offset-4 group"
+              >
+                <span>Beyond engineering: Triathlons, Cricket &amp; Chess</span>
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
 
           {/* Right Column: Clean Company Logos & Timelines */}

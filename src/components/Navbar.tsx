@@ -9,12 +9,13 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Who am i?", href: "#whoami" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Articles", href: "#articles" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
+    { label: "Who am i?", href: "/#whoami" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Articles", href: "/#articles" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Beyond Code", href: "/beyond-code" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -22,7 +23,7 @@ export default function Navbar() {
       <div className="max-w-5xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
-          href="#"
+          href="/"
           className="text-lg font-bold tracking-tight text-gray-900 hover:text-[#007a7a] transition-colors"
         >
           <span>Shubham</span>
@@ -30,7 +31,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-600">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -45,7 +46,7 @@ export default function Navbar() {
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="px-4 py-1.5 rounded text-xs font-medium text-[#007a7a] border border-[#007a7a] hover:bg-[#007a7a] hover:text-white transition-all shadow-xs"
           >
             Say Hello

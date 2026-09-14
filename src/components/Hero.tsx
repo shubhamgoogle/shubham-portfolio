@@ -98,17 +98,13 @@ export default function Hero() {
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Distributed Streaming &amp; OpenTelemetry Tracing</span>
                 </div>
-              </div>
-
-              {/* Key Scale Metric Chips */}
-              <div className="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-gray-100 font-mono text-center">
-                <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
-                  <div className="text-xs sm:text-sm font-bold text-[#007a7a]">Production-Ready</div>
-                  <div className="text-[10px] text-gray-500 mt-0.5 leading-tight">Agentic AI Platforms</div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Production-Ready Agentic AI Platforms</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
-                  <div className="text-xs sm:text-sm font-bold text-[#007a7a]">Multi-TB+ Scale</div>
-                  <div className="text-[10px] text-gray-500 mt-0.5 leading-tight">Scalable Data Pipelines</div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Multi-TB+ Scalable Data Pipelines</span>
                 </div>
               </div>
             </div>

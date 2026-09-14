@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Compass } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Navbar() {
@@ -45,8 +45,8 @@ export default function Navbar() {
                 }`}
               >
                 {isBeyond && (
-                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-amber-400 via-orange-500 to-teal-500 text-white shadow-2xs group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
-                    <Sparkles className="w-3 h-3 text-white fill-white/40" />
+                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20 group-hover:bg-[#007a7a] group-hover:text-white group-hover:border-[#007a7a] transition-all duration-300">
+                    <Compass className="w-3.5 h-3.5 group-hover:rotate-90 transition-transform duration-500" />
                   </span>
                 )}
                 <span>{link.label}</span>
@@ -92,8 +92,8 @@ export default function Navbar() {
                 }`}
               >
                 {isBeyond && (
-                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-amber-400 via-orange-500 to-teal-500 text-white shadow-2xs">
-                    <Sparkles className="w-3 h-3 text-white fill-white/40" />
+                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20">
+                    <Compass className="w-3.5 h-3.5" />
                   </span>
                 )}
                 <span>{link.label}</span>

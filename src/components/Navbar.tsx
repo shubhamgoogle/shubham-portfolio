@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Navbar() {
@@ -32,15 +32,27 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-600">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="hover:text-[#007a7a] transition-colors relative py-1"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isBeyond = link.href === "/beyond-code";
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`transition-all relative py-1 flex items-center gap-1.5 group ${
+                  isBeyond
+                    ? "text-[#007a7a] font-semibold hover:text-[#005f5f]"
+                    : "hover:text-[#007a7a]"
+                }`}
+              >
+                {isBeyond && (
+                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-amber-400 via-orange-500 to-teal-500 text-white shadow-2xs group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+                    <Sparkles className="w-3 h-3 text-white fill-white/40" />
+                  </span>
+                )}
+                <span>{link.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Action Button */}
@@ -66,16 +78,28 @@ export default function Navbar() {
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 border-b border-gray-200 px-6 py-5 space-y-3 shadow-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 hover:text-[#007a7a] py-1.5"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isBeyond = link.href === "/beyond-code";
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-2 text-sm font-medium py-1.5 transition-colors ${
+                  isBeyond
+                    ? "text-[#007a7a] font-semibold"
+                    : "text-gray-700 hover:text-[#007a7a]"
+                }`}
+              >
+                {isBeyond && (
+                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-amber-400 via-orange-500 to-teal-500 text-white shadow-2xs">
+                    <Sparkles className="w-3 h-3 text-white fill-white/40" />
+                  </span>
+                )}
+                <span>{link.label}</span>
+              </Link>
+            );
+          })}
           <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
             <a
               href={`mailto:${portfolioData.personal.email}`}

@@ -85,26 +85,34 @@ export default function Hero() {
               </div>
 
               {/* Core Competencies Summary */}
-              <div className="space-y-2.5 pt-4 border-t border-gray-100 text-xs">
+              <div className="space-y-2 pt-4 border-t border-gray-100 text-xs">
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Big Data Lakehouses (BigQuery &amp; Cloud Spanner)</span>
+                  <span>Big Data Lakehouses &amp; Multi-TB Scalable Pipelines</span>
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Agentic AI &amp; Model Context Protocol (MCP)</span>
+                  <span>Agentic AI, GraphRAG &amp; Model Context Protocol</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Knowledge Graphs using Graph Databases (Spanner &amp; Neo4j)</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Agentic AI Platforms on Google Cloud (ADK)</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Application Deployment &amp; Architecture on GCP Infra</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Production-Ready Agentic AI for Large Enterprises</span>
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Distributed Streaming &amp; OpenTelemetry Tracing</span>
-                </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Production-Ready Agentic AI Platforms</span>
-                </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Multi-TB+ Scalable Data Pipelines</span>
                 </div>
               </div>
             </div>

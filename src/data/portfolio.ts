@@ -73,6 +73,10 @@ export const portfolioData = {
       strava: "https://www.strava.com/athletes/92222693",
       cricheroes: "https://cricheroes.com/player-profile/1529762/shubham-chawla/matches",
       chess: "https://www.chess.com/member/shubhamdal",
+      photos: {
+        triathlon: "https://photos.app.goo.gl/FqYPM5RDYxY5o2YK9",
+        cricket: "https://photos.app.goo.gl/39nvdnAWToizzqgE6",
+      },
     },
   },
 

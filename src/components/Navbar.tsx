@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Compass } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { CricketIcon } from "@/components/Icons";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Navbar() {
@@ -46,7 +47,7 @@ export default function Navbar() {
               >
                 {isBeyond && (
                   <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20 group-hover:bg-[#007a7a] group-hover:text-white group-hover:border-[#007a7a] transition-all duration-300">
-                    <Compass className="w-3.5 h-3.5 group-hover:rotate-90 transition-transform duration-500" />
+                    <CricketIcon className="w-3.5 h-3.5 group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-300" />
                   </span>
                 )}
                 <span>{link.label}</span>
@@ -93,7 +94,7 @@ export default function Navbar() {
               >
                 {isBeyond && (
                   <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20">
-                    <Compass className="w-3.5 h-3.5" />
+                    <CricketIcon className="w-3.5 h-3.5" />
                   </span>
                 )}
                 <span>{link.label}</span>

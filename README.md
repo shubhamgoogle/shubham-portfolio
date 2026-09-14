@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shubham Chawla — Portfolio Website
 
-## Getting Started
+A developer-first, high-performance personal portfolio built for **Data Engineering & Agentic AI** roles. Inspired by the dark, minimalist, terminal aesthetic of `satnaing.dev`.
 
-First, run the development server:
+---
 
+## ⚡ Quick Start
+
+### 1. Run Locally
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### 2. Production Build
+```bash
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ How to Update Your Portfolio (Zero-Fuss Updates)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All portfolio data (personal bio, contact info, metrics, featured systems, skills, and terminal commands) is decoupled from the UI and centralized in a single typed file:
 
-## Learn More
+📁 **[`src/data/portfolio.ts`](./src/data/portfolio.ts)**
 
-To learn more about Next.js, take a look at the following resources:
+### Adding a New System or Project:
+Open `src/data/portfolio.ts` and add an entry under `featuredSystems`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+{
+  id: "your-new-pipeline",
+  title: "Real-Time Fraud Detection with PySpark & Kafka",
+  category: "data-engineering", // "agentic-ai" | "data-engineering" | "mcp-tooling"
+  status: "Production",
+  summary: "Sub-50ms streaming inference using Spark Structured Streaming and Vertex AI.",
+  description: "Detailed architecture rationale...",
+  architectureFlow: [
+    "Kafka Ingestion",
+    "Spark Streaming Aggregations",
+    "Model Scoring & Output Sink"
+  ],
+  metrics: [
+    { label: "Throughput", value: "20k eps" },
+    { label: "P99 Latency", value: "< 45ms" }
+  ],
+  stack: ["Kafka", "PySpark", "BigQuery", "Cloud Run"],
+  highlights: ["Automated scaling", "Unit tested with pytest"],
+  github: "https://github.com/shubhamdal"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The UI, category filters, and architecture modals will update automatically with full type safety!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🏗️ Architecture & Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework**: [Next.js 16 (Turbopack, App Router)](https://nextjs.org) + TypeScript + React 19
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) (Slate/Navy dark palette, terminal emerald & cyan accents)
+- **Icons**: [Lucide Icons](https://lucide.dev) & Custom SVG Icons
+- **Interactive CLI**: In-browser terminal widget supporting commands (`whoami`, `systems`, `skills`, `metrics`, `contact`, `clear`)
+- **Blueprints Modal**: Interactive architecture flow visualizer for deep technical breakdowns
+
+---
+
+## 🚀 Free 1-Click Deployment (Vercel or Cloud Run)
+
+### Deploy to Vercel:
+1. Push this repository to GitHub.
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Select your `shubham-portfolio` repository and click **Deploy**.
+4. Any future `git push` to `main` automatically updates your live site!

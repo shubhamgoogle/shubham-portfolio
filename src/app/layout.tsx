@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shubham Chawla | Data Engineer & Agentic AI Developer",
+  title: "Shubham Chawla | AI & Data Engineer, Google",
   description:
-    "Portfolio of Shubham Chawla — Data Engineer & Agentic AI / LLM Developer at Google. Specializing in Lakehouses, GraphRAG, and Model Context Protocol (MCP) ecosystems.",
+    "Portfolio of Shubham Chawla — AI & Data Engineer at Google. Specializing in Lakehouses, BigQuery, Cloud Spanner Graph, and Model Context Protocol (MCP) ecosystems.",
   keywords: [
     "Shubham Chawla",
     "Data Engineer",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shubham Chawla" }],
   openGraph: {
-    title: "Shubham Chawla | Data Engineer & Agentic AI Developer",
+    title: "Shubham Chawla | AI & Data Engineer, Google",
     description:
-      "Specializing in Big Data lakehouses, distributed streaming, and autonomous multi-agent LLM systems.",
+      "Specializing in Big Data lakehouses, distributed streaming, and autonomous multi-agent LLM systems at Google.",
     url: "https://shubhamchawla.dev",
     siteName: "Shubham Chawla Portfolio",
     locale: "en_US",
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#090d16] text-[#f1f5f9] selection:bg-emerald-500/30 selection:text-emerald-300">
+      <body className="min-h-full flex flex-col bg-[#f9fafb] text-[#1f2937] selection:bg-[#007a7a] selection:text-white">
         {children}
       </body>
     </html>

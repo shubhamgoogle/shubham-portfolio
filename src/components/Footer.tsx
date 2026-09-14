@@ -1,30 +1,34 @@
+"use client";
+
 import { portfolioData } from "@/data/portfolio";
 import { ArrowUp, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { GithubIcon, LinkedinIcon, MediumIcon } from "@/components/Icons";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950 py-12 font-mono text-xs text-slate-400">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-        {/* Left: Copyright & Stack */}
-        <div className="space-y-1 text-center sm:text-left">
-          <p className="text-slate-300">
-            Designed &amp; Engineered by{" "}
-            <span className="text-emerald-400 font-semibold">{portfolioData.personal.name}</span>
+    <footer className="border-t border-gray-200 bg-white py-10 text-xs text-gray-500">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+        {/* Left: Built by */}
+        <div className="text-center sm:text-left space-y-1">
+          <p className="text-gray-700 font-medium">
+            Designed &amp; Developed by{" "}
+            <span className="text-[#007a7a] font-semibold">
+              {portfolioData.personal.name}
+            </span>
           </p>
-          <p className="text-[11px] text-slate-500">
-            Built with Next.js, TypeScript &amp; Tailwind CSS • Inspired by developer-first design
+          <p className="text-gray-400 text-[11px]">
+            AI &amp; Data Engineer @ Google
           </p>
         </div>
 
-        {/* Right: Links & Back to Top */}
-        <div className="flex items-center gap-6">
+        {/* Right: Socials & Back to Top */}
+        <div className="flex items-center gap-5">
           <a
             href={portfolioData.personal.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-emerald-400 transition-colors"
-            aria-label="GitHub"
+            className="text-gray-500 hover:text-[#007a7a] transition-colors"
+            aria-label="GitHub Profile"
           >
             <GithubIcon className="w-4 h-4" />
           </a>
@@ -32,21 +36,32 @@ export default function Footer() {
             href={portfolioData.personal.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition-colors"
-            aria-label="LinkedIn"
+            className="text-gray-500 hover:text-[#007a7a] transition-colors"
+            aria-label="LinkedIn Profile"
           >
             <LinkedinIcon className="w-4 h-4" />
           </a>
+          {portfolioData.personal.medium && (
+            <a
+              href={portfolioData.personal.medium}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-[#007a7a] transition-colors"
+              aria-label="Medium Articles"
+            >
+              <MediumIcon className="w-4 h-4" />
+            </a>
+          )}
           <a
             href={`mailto:${portfolioData.personal.email}`}
-            className="hover:text-emerald-400 transition-colors"
-            aria-label="Email"
+            className="text-gray-500 hover:text-[#007a7a] transition-colors"
+            aria-label="Send Email"
           >
             <Mail className="w-4 h-4" />
           </a>
           <a
-            href="#whoami"
-            className="inline-flex items-center gap-1 text-slate-400 hover:text-white px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-[11px]"
+            href="#"
+            className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-900 px-2.5 py-1 rounded bg-gray-100 border border-gray-200 transition-colors text-[11px]"
           >
             <span>Top</span>
             <ArrowUp className="w-3 h-3" />

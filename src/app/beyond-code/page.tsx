@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Activity, Trophy, Crown, Camera, MapPin, Compass, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ExternalLink, Activity, Trophy, Crown, Camera, MapPin, Compass, ArrowUpRight, Globe, Plane } from "lucide-react";
 import { StravaIcon, CricketIcon, ChessComIcon, GooglePhotosIcon } from "@/components/Icons";
+import { portfolioData } from "@/data/portfolio";
 import Footer from "@/components/Footer";
 
 export default function BeyondCodePage() {
@@ -325,35 +326,81 @@ export default function BeyondCodePage() {
                 </div>
               </a>
 
-              {/* Photo Card 4: Mountains & Nature */}
+              {/* Photo Card 4: Around the World Travel */}
               <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs flex flex-col group">
                 <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-cyan-100/60 flex flex-col items-center justify-center text-gray-500 p-5 relative overflow-hidden">
                   <div className="w-12 h-12 rounded-full bg-white shadow-xs flex items-center justify-center text-[#007a7a] mb-2.5 group-hover:scale-110 transition-transform">
-                    <Compass className="w-6 h-6" />
+                    <Globe className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-bold text-gray-800">High Passes &amp; Treks</span>
-                  <span className="text-[11px] text-gray-500 mt-0.5">Trail Exploration</span>
+                  <span className="text-xs font-bold text-gray-800">Around the World</span>
+                  <span className="text-[11px] text-gray-500 mt-0.5">11 Countries Explored</span>
 
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs border border-teal-200 text-[#007a7a] text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    <span>Outdoors</span>
+                    <Plane className="w-3 h-3" />
+                    <span>Travel</span>
                   </div>
                 </div>
                 <div className="p-4 border-t border-gray-100 flex-1 flex flex-col justify-between">
                   <div>
                     <h4 className="text-xs font-bold text-gray-900">
-                      Nature &amp; Perspective
+                      Global Exploration
                     </h4>
                     <p className="text-[11px] text-gray-500 mt-1 leading-relaxed">
-                      Finding calm and broad perspectives across outdoor trails.
+                      Traveling across 11 countries &amp; 4 continents, experiencing unique cultures and landscapes.
                     </p>
                   </div>
-                  <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-gray-400">
-                    <span>Expeditions</span>
-                    <MapPin className="w-3.5 h-3.5" />
+                  <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-[#007a7a]">
+                    <span>11 Countries Visited</span>
+                    <Globe className="w-3.5 h-3.5" />
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Visited Countries Section */}
+          <div className="border-t border-gray-200 pt-12 mt-16">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <div>
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20 mb-2">
+                  <Plane className="w-3 h-3" />
+                  <span>Global Footprint</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                  Visited Countries
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                  Passport stamps and explorations across 11 countries and 4 continents.
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-1.5 text-xs text-gray-600 font-mono bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-2xs">
+                <Globe className="w-3.5 h-3.5 text-[#007a7a]" />
+                <span className="font-semibold text-gray-900">11 Countries</span>
+                <span className="text-gray-400">•</span>
+                <span>4 Continents</span>
+              </div>
+            </div>
+
+            {/* Countries Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {portfolioData.personal.hobbies.visitedCountries.map((country) => (
+                <div
+                  key={country.name}
+                  className="bg-white rounded-xl border border-gray-200 p-3.5 shadow-2xs hover:shadow-sm hover:border-[#007a7a]/40 hover:-translate-y-0.5 transition-all flex items-center gap-3 group"
+                >
+                  <span className="text-2xl select-none" role="img" aria-label={country.name}>
+                    {country.flag}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors truncate">
+                      {country.name}
+                    </p>
+                    <p className="text-[10px] text-gray-400 font-mono uppercase truncate">
+                      {country.region}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

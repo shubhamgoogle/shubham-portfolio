@@ -222,3 +222,35 @@ export function CognizantLogo({ className = "w-6 h-6" }: { className?: string })
     </svg>
   );
 }
+
+export function GeminiIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="Google Gemini"
+    >
+      <defs>
+        <linearGradient id="gemini-sparkle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4E82EE" />
+          <stop offset="30%" stopColor="#7DA4F8" />
+          <stop offset="65%" stopColor="#9B72CF" />
+          <stop offset="100%" stopColor="#D96570" />
+        </linearGradient>
+      </defs>
+      {/* Primary 4-pointed sparkle */}
+      <path
+        d="M11 1C11 6.523 6.523 11 1 11C6.523 11 11 15.477 11 21C11 15.477 15.477 11 21 11C15.477 11 11 6.523 11 1Z"
+        fill="url(#gemini-sparkle-gradient)"
+      />
+      {/* Top-right accent sparkle */}
+      <path
+        d="M18.5 2C18.5 3.657 17.157 5 15.5 5C17.157 5 18.5 6.343 18.5 8C18.5 6.343 19.843 5 21.5 5C19.843 5 18.5 3.657 18.5 2Z"
+        fill="url(#gemini-sparkle-gradient)"
+      />
+    </svg>
+  );
+}

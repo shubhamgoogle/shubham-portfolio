@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Activity, Trophy, Crown, Camera, MapPin, Compass, ArrowUpRight } from "lucide-react";
-import { StravaIcon, CricketIcon } from "@/components/Icons";
+import { StravaIcon, CricketIcon, ChessComIcon } from "@/components/Icons";
 import Footer from "@/components/Footer";
 
 export default function BeyondCodePage() {
@@ -150,21 +150,21 @@ export default function BeyondCodePage() {
             </div>
 
             {/* 3. Chess */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between shadow-xs hover:border-[#007a7a]/40 hover:shadow-sm transition-all group">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between shadow-xs hover:border-[#81b64c]/50 hover:shadow-sm transition-all group">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#007a7a]/10 flex items-center justify-center text-[#007a7a]">
-                    <Crown className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-[#81b64c]/15 flex items-center justify-center text-[#629924]">
+                    <ChessComIcon className="w-5 h-5" />
                   </div>
-                  <span className="text-[11px] font-mono text-[#007a7a] bg-[#007a7a]/10 px-2 py-0.5 rounded font-medium">
-                    Strategy
+                  <span className="text-[11px] font-mono text-[#629924] bg-[#81b64c]/10 px-2 py-0.5 rounded font-medium">
+                    Tactics &amp; Blitz
                   </span>
                 </div>
 
-                <h2 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-[#007a7a] transition-colors">
+                <h2 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-[#629924] transition-colors">
                   Chess &amp; Game Theory
                 </h2>
-                <p className="text-xs text-[#007a7a] font-semibold mt-1 mb-3">
+                <p className="text-xs text-[#629924] font-semibold mt-1 mb-3">
                   Calculation • Patience • Tactics
                 </p>
 
@@ -174,24 +174,30 @@ export default function BeyondCodePage() {
 
                 <div className="space-y-1.5 pt-3 border-t border-gray-100 text-[11px] text-gray-600 mb-6">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#007a7a]"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#81b64c]"></span>
                     <span>Positional strategy &amp; endgame calculation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#007a7a]"></span>
-                    <span>Rapid pattern recognition under time clock</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#81b64c]"></span>
+                    <span>Rapid pattern recognition under time pressure</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#007a7a]"></span>
-                    <span>Anticipating adversarial states</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#81b64c]"></span>
+                    <span>Active games &amp; puzzles on Chess.com (@shubhamdal)</span>
                   </div>
                 </div>
               </div>
 
-              <div className="w-full inline-flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2.5 rounded-lg text-xs font-semibold">
-                <Crown className="w-4 h-4 text-[#007a7a]" />
-                <span>Tactical Mindset</span>
-              </div>
+              <a
+                href="https://www.chess.com/member/shubhamdal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#81b64c] hover:bg-[#6f9e3f] text-white px-4 py-2.5 rounded-lg text-xs font-semibold transition-all shadow-xs"
+              >
+                <ChessComIcon className="w-4 h-4" />
+                <span>View Chess.com Profile</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
@@ -203,7 +209,7 @@ export default function BeyondCodePage() {
                   Moments &amp; Captures
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                  Snapshots from endurance training routes, cricket matches, and travels.
+                  Snapshots and highlights from endurance training routes, cricket matches, chess, and travels.
                 </p>
               </div>
               <div className="inline-flex items-center gap-1.5 text-xs text-gray-400 font-mono">
@@ -213,17 +219,17 @@ export default function BeyondCodePage() {
             </div>
 
             {/* Responsive Photo Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {/* Photo Card 1: Triathlon / Cycling */}
               <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs group hover:shadow-md transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-amber-50 to-orange-100/50 flex flex-col items-center justify-center text-gray-400 p-6 relative">
-                  <div className="w-12 h-12 rounded-full bg-white/80 shadow-xs flex items-center justify-center text-[#FC6100] mb-2">
-                    <StravaIcon className="w-6 h-6" />
+                <div className="aspect-[4/3] bg-gradient-to-br from-amber-50 to-orange-100/50 flex flex-col items-center justify-center text-gray-400 p-5 relative">
+                  <div className="w-11 h-11 rounded-full bg-white/90 shadow-xs flex items-center justify-center text-[#FC6100] mb-2">
+                    <StravaIcon className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-semibold text-gray-700">Triathlon Training</span>
                   <span className="text-[11px] text-gray-400 mt-0.5">Cycling &amp; Long Runs</span>
                 </div>
-                <div className="p-4 border-t border-gray-100">
+                <div className="p-3.5 border-t border-gray-100">
                   <h4 className="text-xs font-bold text-gray-900">Endurance Sessions</h4>
                   <p className="text-[11px] text-gray-500 mt-1">
                     Building aerobic base and mental endurance across weekend rides.
@@ -233,31 +239,48 @@ export default function BeyondCodePage() {
 
               {/* Photo Card 2: Cricket Match */}
               <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs group hover:shadow-md transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-red-50 to-rose-100/50 flex flex-col items-center justify-center text-gray-400 p-6 relative">
-                  <div className="w-12 h-12 rounded-full bg-white/80 shadow-xs flex items-center justify-center text-[#DC2626] mb-2">
-                    <CricketIcon className="w-6 h-6" />
+                <div className="aspect-[4/3] bg-gradient-to-br from-red-50 to-rose-100/50 flex flex-col items-center justify-center text-gray-400 p-5 relative">
+                  <div className="w-11 h-11 rounded-full bg-white/90 shadow-xs flex items-center justify-center text-[#DC2626] mb-2">
+                    <CricketIcon className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-semibold text-gray-700">Match Day</span>
                   <span className="text-[11px] text-gray-400 mt-0.5">League Tournament Matches</span>
                 </div>
-                <div className="p-4 border-t border-gray-100">
+                <div className="p-3.5 border-t border-gray-100">
                   <h4 className="text-xs font-bold text-gray-900">Competitive Cricket</h4>
                   <p className="text-[11px] text-gray-500 mt-1">
-                    Weekend games with teammates and live match logging on CricHeroes.
+                    Weekend games with teammates and live logging on CricHeroes.
                   </p>
                 </div>
               </div>
 
-              {/* Photo Card 3: Mountains / Nature */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs group hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-                <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-emerald-100/50 flex flex-col items-center justify-center text-gray-400 p-6 relative">
-                  <div className="w-12 h-12 rounded-full bg-white/80 shadow-xs flex items-center justify-center text-[#007a7a] mb-2">
-                    <Compass className="w-6 h-6" />
+              {/* Photo Card 3: Chess */}
+              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs group hover:shadow-md transition-shadow">
+                <div className="aspect-[4/3] bg-gradient-to-br from-lime-50 to-emerald-100/50 flex flex-col items-center justify-center text-gray-400 p-5 relative">
+                  <div className="w-11 h-11 rounded-full bg-white/90 shadow-xs flex items-center justify-center text-[#629924] mb-2">
+                    <ChessComIcon className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-semibold text-gray-700">Outdoor &amp; Wilderness</span>
+                  <span className="text-xs font-semibold text-gray-700">Game Theory</span>
+                  <span className="text-[11px] text-gray-400 mt-0.5">Tactics &amp; Blitz</span>
+                </div>
+                <div className="p-3.5 border-t border-gray-100">
+                  <h4 className="text-xs font-bold text-gray-900">Chess.com Matches</h4>
+                  <p className="text-[11px] text-gray-500 mt-1">
+                    Positional play and tactical speed workouts under clock pressure.
+                  </p>
+                </div>
+              </div>
+
+              {/* Photo Card 4: Mountains / Nature */}
+              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs group hover:shadow-md transition-shadow">
+                <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-cyan-100/50 flex flex-col items-center justify-center text-gray-400 p-5 relative">
+                  <div className="w-11 h-11 rounded-full bg-white/90 shadow-xs flex items-center justify-center text-[#007a7a] mb-2">
+                    <Compass className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-semibold text-gray-700">Outdoor &amp; Nature</span>
                   <span className="text-[11px] text-gray-400 mt-0.5">Trek Routes &amp; Exploration</span>
                 </div>
-                <div className="p-4 border-t border-gray-100">
+                <div className="p-3.5 border-t border-gray-100">
                   <h4 className="text-xs font-bold text-gray-900">Nature &amp; Perspectives</h4>
                   <p className="text-[11px] text-gray-500 mt-1">
                     Finding calm and broad perspectives in outdoor trails and high passes.

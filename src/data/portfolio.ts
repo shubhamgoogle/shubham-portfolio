@@ -69,6 +69,11 @@ export const portfolioData = {
     medium: "https://medium.com/@shubu_google",
     email: "shubhamchawla10@gmail.com",
     resumeUrl: "#contact",
+    hobbies: {
+      strava: "https://www.strava.com/athletes/92222693",
+      cricheroes: "https://cricheroes.com/player-profile/1529762/shubham-chawla/matches",
+      chess: "https://www.chess.com/member/shubhamdal",
+    },
   },
 
   stats: [

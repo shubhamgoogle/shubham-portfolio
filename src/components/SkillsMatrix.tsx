@@ -88,47 +88,49 @@ export default function SkillsMatrix() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {portfolioData.certifications.map((cert) => (
               <a
                 key={cert.name}
                 href={cert.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 flex items-start gap-5 shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-200 p-5 flex flex-col justify-between shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                {/* Large Credly Badge Image */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 relative flex-shrink-0 bg-gray-50 rounded-xl p-2 border border-gray-100 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-                  <Image
-                    src={cert.badgeImage}
-                    alt={cert.name}
-                    fill
-                    sizes="(max-width: 768px) 80px, 96px"
-                    className="object-contain p-1"
-                  />
+                <div className="flex flex-col items-center text-center">
+                  {/* Large Credly Badge Image */}
+                  <div className="w-20 h-20 relative mb-3 bg-gray-50 rounded-2xl p-2 border border-gray-100 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                    <Image
+                      src={cert.badgeImage}
+                      alt={cert.name}
+                      fill
+                      sizes="80px"
+                      className="object-contain p-1"
+                    />
+                  </div>
+
+                  {/* Category Pill */}
+                  {cert.category && (
+                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/25 mb-2.5">
+                      {cert.category}
+                    </span>
+                  )}
+
+                  {/* Certification Name */}
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors leading-snug mb-1">
+                    {cert.name}
+                  </h4>
+
+                  {/* Issuer */}
+                  <p className="text-xs text-gray-500 font-medium">
+                    {cert.issuer}
+                  </p>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
-                  <div>
-                    {cert.category && (
-                      <span className="inline-block text-xs sm:text-[13px] font-bold px-3 py-1 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/25 mb-2.5">
-                        {cert.category}
-                      </span>
-                    )}
-                    <h4 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors leading-snug">
-                      {cert.name}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
-                      {cert.issuer}
-                    </p>
-                  </div>
-
-                  {/* Verification link */}
-                  <div className="pt-3.5 mt-3.5 border-t border-gray-100 flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#007a7a] group-hover:underline">
-                    <span>Verify on Credly</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
+                {/* Verification link */}
+                <div className="pt-3.5 mt-3.5 border-t border-gray-100 flex items-center justify-center gap-1.5 text-xs font-semibold text-[#007a7a] group-hover:underline">
+                  <span>Verify on Credly</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </a>
             ))}

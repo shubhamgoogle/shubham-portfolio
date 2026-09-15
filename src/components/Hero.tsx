@@ -60,28 +60,19 @@ export default function Hero() {
 
           {/* Right Visual: Clean Professional Profile Card (5 cols) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all relative group">
-              {/* Featured Profile Photo at Google Hyderabad */}
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-gray-100 border border-gray-100 mb-4 shadow-2xs">
-                <Image
-                  src={portfolioData.personal.avatar || "/profile.jpg"}
-                  alt={`${portfolioData.personal.name} at Google Hyderabad`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 384px"
-                  className="object-cover object-[center_35%] group-hover:scale-[1.02] transition-transform duration-500"
-                  priority
-                />
-                {/* Office badge overlay */}
-                <div className="absolute bottom-3 left-3">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[11px] font-medium text-gray-800 shadow-xs border border-white/60">
-                    <span className="w-2 h-2 rounded-full bg-[#34A853] animate-pulse"></span>
-                    <span>Google Hyderabad</span>
-                  </span>
-                </div>
-              </div>
-
+            <div className="w-full max-w-sm bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow relative">
               {/* Profile Header */}
-              <div className="flex items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-[#007a7a]/20 shadow-xs flex-shrink-0 group">
+                  <Image
+                    src={portfolioData.personal.avatar || "/profile.jpg"}
+                    alt={`${portfolioData.personal.name} at Google Hyderabad`}
+                    fill
+                    sizes="80px"
+                    className="object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-300"
+                    priority
+                  />
+                </div>
                 <div>
                   <h3 className="text-base font-bold text-gray-900 leading-tight">
                     {portfolioData.personal.name}
@@ -89,18 +80,18 @@ export default function Hero() {
                   <p className="text-xs text-[#007a7a] font-medium mt-0.5">
                     {portfolioData.personal.statusBadge}
                   </p>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] text-gray-500 bg-gray-50 px-2 py-1 rounded-md border border-gray-100 flex-shrink-0">
-                  <MapPin className="w-3 h-3 text-gray-400" />
-                  <span>Hyderabad</span>
+                  <div className="flex items-center gap-1 text-[11px] text-gray-500 mt-1">
+                    <MapPin className="w-3 h-3 text-gray-400" />
+                    <span>Hyderabad, India</span>
+                  </div>
                 </div>
               </div>
 
               {/* Core Competencies Summary */}
-              <div className="space-y-1.5 pt-3 border-t border-gray-100 text-xs">
+              <div className="space-y-2 pt-4 border-t border-gray-100 text-xs">
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Big Data Lakehouses &amp; Multi-TB Pipelines</span>
+                  <span>Big Data Lakehouses &amp; Multi-TB Scalable Pipelines</span>
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
@@ -108,11 +99,19 @@ export default function Hero() {
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Knowledge Graphs using Spanner &amp; Neo4j</span>
+                  <span>Knowledge Graphs using Graph Databases (Spanner &amp; Neo4j)</span>
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
-                  <span>Production-Ready Agentic AI on Google Cloud</span>
+                  <span>Agentic AI Platforms on Google Cloud (ADK)</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Application Deployment &amp; Architecture on GCP Infra</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-700">
+                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                  <span>Production-Ready Agentic AI for Large Enterprises</span>
                 </div>
                 <div className="flex items-start gap-2 text-gray-700">
                   <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />

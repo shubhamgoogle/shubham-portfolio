@@ -78,62 +78,57 @@ export default function SkillsMatrix() {
 
         {/* Professional Certifications Sub-section */}
         <div className="mt-16 pt-12 border-t border-gray-200/80">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#007a7a] uppercase tracking-wider mb-2">
-                <Award className="w-4 h-4" />
-                <span>Verified Credentials</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
-                Professional Certifications
-              </h3>
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#007a7a] uppercase tracking-wider mb-2">
+              <Award className="w-4 h-4" />
+              <span>Verified Credentials</span>
             </div>
-            <p className="text-xs text-gray-500 max-w-md sm:text-right">
-              Globally accredited certifications in enterprise machine learning, distributed data engineering, cloud infrastructure, and automation.
-            </p>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
+              Professional Certifications
+            </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {portfolioData.certifications.map((cert) => (
               <a
                 key={cert.name}
                 href={cert.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-xl border border-gray-200 p-5 flex flex-col justify-between shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 flex items-start gap-5 shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div>
-                  {/* Badge Image & Category */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="w-14 h-14 relative flex-shrink-0 bg-gray-50 rounded-lg p-1 border border-gray-100 group-hover:scale-105 transition-transform duration-300">
-                      <Image
-                        src={cert.badgeImage}
-                        alt={cert.name}
-                        fill
-                        sizes="56px"
-                        className="object-contain p-1"
-                      />
-                    </div>
+                {/* Large Credly Badge Image */}
+                <div className="w-20 h-20 sm:w-24 sm:h-24 relative flex-shrink-0 bg-gray-50 rounded-xl p-2 border border-gray-100 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                  <Image
+                    src={cert.badgeImage}
+                    alt={cert.name}
+                    fill
+                    sizes="(max-width: 768px) 80px, 96px"
+                    className="object-contain p-1"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
+                  <div>
                     {cert.category && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200/80 text-right">
+                      <span className="inline-block text-xs sm:text-[13px] font-bold px-3 py-1 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/25 mb-2.5">
                         {cert.category}
                       </span>
                     )}
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors leading-snug">
+                      {cert.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
+                      {cert.issuer}
+                    </p>
                   </div>
 
-                  {/* Title & Issuer */}
-                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors leading-snug line-clamp-2 mb-1.5">
-                    {cert.name}
-                  </h4>
-                  <p className="text-xs text-gray-500 font-medium">
-                    {cert.issuer}
-                  </p>
-                </div>
-
-                {/* Footer Link */}
-                <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-[#007a7a] font-medium">
-                  <span>Verify on Credly</span>
-                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  {/* Verification link */}
+                  <div className="pt-3.5 mt-3.5 border-t border-gray-100 flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#007a7a] group-hover:underline">
+                    <span>Verify on Credly</span>
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
                 </div>
               </a>
             ))}

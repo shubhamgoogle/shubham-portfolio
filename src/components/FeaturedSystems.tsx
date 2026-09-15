@@ -1,14 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { portfolioData, SystemProject } from "@/data/portfolio";
-import { Network } from "lucide-react";
+import { Network, ChevronLeft, ChevronRight } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 import ArchitectureModal from "./ArchitectureModal";
 
 export default function FeaturedSystems() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedProject, setSelectedProject] = useState<SystemProject | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -22,40 +25,112 @@ export default function FeaturedSystems() {
       ? portfolioData.featuredSystems
       : portfolioData.featuredSystems.filter((item) => item.category === activeCategory);
 
+  const updateScrollButtons = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+  }, []);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    container.scrollTo({ left: 0, behavior: "smooth" });
+    const timer = setTimeout(updateScrollButtons, 150);
+    return () => clearTimeout(timer);
+  }, [activeCategory, updateScrollButtons]);
+
+  useEffect(() => {
+    updateScrollButtons();
+    window.addEventListener("resize", updateScrollButtons);
+    return () => window.removeEventListener("resize", updateScrollButtons);
+  }, [updateScrollButtons]);
+
+  const scroll = (direction: "left" | "right") => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const scrollAmount = 440;
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="projects" className="py-20 border-t border-gray-200/80">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="section-heading text-2xl sm:text-3xl">Featured Projects</h2>
           <p className="text-gray-600 text-sm sm:text-base mt-4 max-w-lg mx-auto">
             A selection of production lakehouses, GraphRAG engines, and open Model Context Protocol tooling.
           </p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {categories.map((cat) => (
+        {/* Controls Bar: Category Filter Pills & Sliding Row Navigation Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                  activeCategory === cat.id
+                    ? "bg-[#007a7a] text-white shadow-xs"
+                    : "bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:text-gray-900"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Left / Right Slide Controls */}
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <span className="text-xs text-gray-400 hidden md:inline mr-1">
+              Slide ({filteredSystems.length})
+            </span>
             <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
-                activeCategory === cat.id
-                  ? "bg-[#007a7a] text-white shadow-xs"
-                  : "bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:text-gray-900"
+              type="button"
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              aria-label="Scroll projects left"
+              className={`p-2 rounded-full border transition-all ${
+                canScrollLeft
+                  ? "bg-white text-gray-700 border-gray-300 hover:border-[#007a7a] hover:text-[#007a7a] shadow-xs cursor-pointer"
+                  : "bg-gray-50 text-gray-300 border-gray-200 cursor-not-allowed"
               }`}
             >
-              {cat.label}
+              <ChevronLeft className="w-4 h-4" />
             </button>
-          ))}
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              aria-label="Scroll projects right"
+              className={`p-2 rounded-full border transition-all ${
+                canScrollRight
+                  ? "bg-white text-gray-700 border-gray-300 hover:border-[#007a7a] hover:text-[#007a7a] shadow-xs cursor-pointer"
+                  : "bg-gray-50 text-gray-300 border-gray-200 cursor-not-allowed"
+              }`}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Projects 2-column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Single Horizontal Sliding Row */}
+        <div
+          ref={scrollContainerRef}
+          onScroll={updateScrollButtons}
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
           {filteredSystems.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-xl border border-gray-200 hover:border-[#007a7a]/50 p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group"
+              className="w-[85vw] sm:w-[380px] md:w-[420px] flex-shrink-0 snap-start bg-white rounded-xl border border-gray-200 hover:border-[#007a7a]/50 p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group"
             >
               <div>
                 {/* Category & Status */}

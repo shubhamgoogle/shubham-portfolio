@@ -31,10 +31,10 @@ export default function Hero() {
         DATA • AGENTIC AI
       </span>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Main Intro Text (8 cols) */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
+          {/* Main Intro Text (6 cols) */}
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
             {/* Greeting */}
             <p className="text-[#007a7a] font-medium text-base sm:text-lg">
               Hi, my name is
@@ -74,15 +74,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Visual: Clean Professional Profile Card (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow relative">
+          {/* Right Visual: Enlarged Clean Professional Profile Card (6 cols) */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+            <div className="w-full max-w-lg lg:max-w-none bg-white rounded-2xl border border-gray-200 p-7 sm:p-8 shadow-md hover:shadow-lg transition-all relative">
               {/* Profile Header */}
-              <div className="flex items-center gap-4 mb-5">
+              <div className="flex items-center gap-5 mb-6">
                 <button
                   type="button"
                   onClick={() => setShowImageModal(true)}
-                  className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-[#007a7a]/25 hover:border-[#007a7a] shadow-xs flex-shrink-0 group cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#007a7a] focus:ring-offset-2"
+                  className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[#007a7a]/25 hover:border-[#007a7a] shadow-sm flex-shrink-0 group cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#007a7a] focus:ring-offset-2"
                   aria-label="View full size profile photo"
                   title="Click to view full photo"
                 >
@@ -90,7 +90,7 @@ export default function Hero() {
                     src={portfolioData.personal.avatar || "/profile.jpg"}
                     alt={`${portfolioData.personal.name} at Google Hyderabad`}
                     fill
-                    sizes="80px"
+                    sizes="112px"
                     className="object-cover object-[center_35%] group-hover:scale-110 transition-transform duration-300"
                     priority
                   />
@@ -100,47 +100,47 @@ export default function Hero() {
                   </div>
                 </button>
                 <div>
-                  <h3 className="text-base font-bold text-gray-900 leading-tight">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
                     {portfolioData.personal.name}
                   </h3>
-                  <p className="text-xs text-[#007a7a] font-medium mt-0.5">
+                  <p className="text-xs sm:text-sm text-[#007a7a] font-semibold mt-1">
                     {portfolioData.personal.statusBadge}
                   </p>
-                  <div className="flex items-center gap-1 text-[11px] text-gray-500 mt-1">
-                    <MapPin className="w-3 h-3 text-gray-400" />
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500 mt-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-gray-400" />
                     <span>Hyderabad, India</span>
                   </div>
                 </div>
               </div>
 
               {/* Core Competencies Summary */}
-              <div className="space-y-2 pt-4 border-t border-gray-100 text-xs">
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+              <div className="space-y-2.5 sm:space-y-3 pt-5 border-t border-gray-100 text-xs sm:text-sm font-medium">
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Big Data Lakehouses &amp; Multi-TB Scalable Pipelines</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Agentic AI, GraphRAG &amp; Model Context Protocol</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Knowledge Graphs using Graph Databases (Spanner &amp; Neo4j)</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Agentic AI Platforms on Google Cloud (ADK)</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Application Deployment &amp; Architecture on GCP Infra</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Production-Ready Agentic AI for Large Enterprises</span>
                 </div>
-                <div className="flex items-start gap-2 text-gray-700">
-                  <Sparkles className="w-3.5 h-3.5 text-[#007a7a] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700">
+                  <Sparkles className="w-4 h-4 text-[#007a7a] flex-shrink-0 mt-0.5" />
                   <span>Distributed Streaming &amp; OpenTelemetry Tracing</span>
                 </div>
               </div>

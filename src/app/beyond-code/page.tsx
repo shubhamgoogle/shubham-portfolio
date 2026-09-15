@@ -107,7 +107,7 @@ export default function BeyondCodePage() {
                     <CricketIcon className="w-5 h-5" />
                   </div>
                   <span className="text-[11px] font-mono text-[#DC2626] bg-[#DC2626]/10 px-2 py-0.5 rounded font-medium">
-                    Tournament
+                    Team
                   </span>
                 </div>
 

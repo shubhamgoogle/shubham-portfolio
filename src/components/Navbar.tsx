@@ -16,12 +16,11 @@ export default function Navbar() {
     { label: "Articles", href: "/#articles" },
     { label: "Skills", href: "/#skills" },
     { label: "Beyond Code", href: "/beyond-code" },
-    { label: "Contact", href: "/#contact" },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-200/80 transition-all duration-300">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/"

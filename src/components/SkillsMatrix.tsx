@@ -98,13 +98,13 @@ export default function SkillsMatrix() {
                 className="group bg-white rounded-2xl border border-gray-200 p-5 flex flex-col justify-between shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
                 <div className="flex flex-col items-center text-center">
-                  {/* Credly Badge Image (Icon only, no enclosing box) */}
-                  <div className="w-28 h-28 relative mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  {/* Credly Badge Image (Icon only, no enclosing box, 50% larger) */}
+                  <div className="w-40 h-40 sm:w-[168px] sm:h-[168px] relative mb-3.5 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
                     <Image
                       src={cert.badgeImage}
                       alt={cert.name}
                       fill
-                      sizes="112px"
+                      sizes="(max-width: 768px) 160px, 168px"
                       className="object-contain"
                     />
                   </div>

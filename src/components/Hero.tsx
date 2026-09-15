@@ -1,10 +1,26 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronDown, ArrowRight, Sparkles, MapPin } from "lucide-react";
+import { ChevronDown, ArrowRight, Sparkles, MapPin, X, Maximize2 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Hero() {
+  const [showImageModal, setShowImageModal] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowImageModal(false);
+    };
+    if (showImageModal) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showImageModal]);
   return (
     <section className="relative min-h-[calc(100vh-4rem)] pt-24 sm:pt-32 pb-16 flex flex-col justify-center overflow-hidden">
       {/* Subtle background ambient text watermark like satnaing.dev */}
@@ -63,16 +79,26 @@ export default function Hero() {
             <div className="w-full max-w-sm bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow relative">
               {/* Profile Header */}
               <div className="flex items-center gap-4 mb-5">
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-[#007a7a]/20 shadow-xs flex-shrink-0 group">
+                <button
+                  type="button"
+                  onClick={() => setShowImageModal(true)}
+                  className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-[#007a7a]/25 hover:border-[#007a7a] shadow-xs flex-shrink-0 group cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#007a7a] focus:ring-offset-2"
+                  aria-label="View full size profile photo"
+                  title="Click to view full photo"
+                >
                   <Image
                     src={portfolioData.personal.avatar || "/profile.jpg"}
                     alt={`${portfolioData.personal.name} at Google Hyderabad`}
                     fill
                     sizes="80px"
-                    className="object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover object-[center_35%] group-hover:scale-110 transition-transform duration-300"
                     priority
                   />
-                </div>
+                  {/* Hover overlay hint */}
+                  <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Maximize2 className="w-5 h-5 text-white drop-shadow-md" />
+                  </div>
+                </button>
                 <div>
                   <h3 className="text-base font-bold text-gray-900 leading-tight">
                     {portfolioData.personal.name}
@@ -134,6 +160,56 @@ export default function Hero() {
           </a>
         </div>
       </div>
+
+      {/* Full Photo Lightbox / Modal */}
+      {showImageModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setShowImageModal(false)}
+        >
+          <div
+            className="relative max-w-lg w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100 animate-in zoom-in-95 duration-200 flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowImageModal(false)}
+              className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all cursor-pointer shadow-md"
+              aria-label="Close image popup"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* High-res Image with original 4/5 portrait ratio */}
+            <div className="relative w-full aspect-[4/5] bg-gray-950">
+              <Image
+                src={portfolioData.personal.avatar || "/profile.jpg"}
+                alt={`${portfolioData.personal.name} at Google Hyderabad`}
+                fill
+                sizes="(max-width: 768px) 95vw, 512px"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Caption bar */}
+            <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <h4 className="text-sm font-bold text-gray-900">
+                  {portfolioData.personal.name}
+                </h4>
+                <p className="text-xs text-[#007a7a] font-medium">
+                  {portfolioData.personal.statusBadge}
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gray-50 border border-gray-200 text-xs font-medium text-gray-700">
+                <span className="w-2 h-2 rounded-full bg-[#34A853]"></span>
+                <span>Google Hyderabad</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

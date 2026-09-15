@@ -30,36 +30,39 @@ export default function Navbar() {
           <span className="text-[#007a7a]">.dev</span>
         </Link>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-600">
-          {navLinks.map((link) => {
-            const isBeyond = link.href === "/beyond-code";
-            return (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`transition-all relative py-1 flex items-center gap-1.5 group ${
-                  isBeyond
-                    ? "text-[#007a7a] font-semibold hover:text-[#005f5f]"
-                    : "hover:text-[#007a7a]"
-                }`}
-              >
-                {isBeyond && (
-                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20 group-hover:bg-[#007a7a] group-hover:text-white group-hover:border-[#007a7a] transition-all duration-300">
-                    <CricketIcon className="w-3.5 h-3.5 group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-300" />
-                  </span>
-                )}
-                <span>{link.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
+        {/* Desktop Nav Links + Action Button Right-Aligned Together */}
+        <div className="hidden md:flex items-center gap-6 lg:gap-7">
+          <nav className="flex items-center gap-6 lg:gap-7 text-sm font-medium text-gray-600">
+            {navLinks.map((link) => {
+              const isBeyond = link.href === "/beyond-code";
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`transition-all relative py-1 flex items-center gap-1.5 group ${
+                    isBeyond
+                      ? "text-[#007a7a] font-semibold hover:text-[#005f5f]"
+                      : "hover:text-[#007a7a]"
+                  }`}
+                >
+                  {isBeyond && (
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#007a7a]/10 text-[#007a7a] border border-[#007a7a]/20 group-hover:bg-[#007a7a] group-hover:text-white group-hover:border-[#007a7a] transition-all duration-300">
+                      <CricketIcon className="w-3.5 h-3.5 group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-300" />
+                    </span>
+                  )}
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
 
-        {/* Action Button */}
-        <div className="hidden md:flex items-center gap-3">
+          {/* Subtle Vertical Divider */}
+          <span className="h-4 w-px bg-gray-200" aria-hidden="true" />
+
+          {/* Action Button */}
           <a
             href="/#contact"
-            className="px-4 py-1.5 rounded text-xs font-medium text-[#007a7a] border border-[#007a7a] hover:bg-[#007a7a] hover:text-white transition-all shadow-xs"
+            className="px-4 py-1.5 rounded-md text-xs font-semibold text-[#007a7a] border border-[#007a7a] hover:bg-[#007a7a] hover:text-white transition-all shadow-2xs"
           >
             Say Hello
           </a>

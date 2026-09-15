@@ -16,6 +16,14 @@ export interface SystemProject {
   status: "Production" | "Internal System" | "Open Protocol" | "Open Source";
 }
 
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  badgeImage: string;
+  url: string;
+  category?: string;
+}
+
 export interface SkillCategory {
   title: string;
   description: string;
@@ -381,6 +389,37 @@ export const portfolioData = {
       ]
     }
   ] as SkillCategory[],
+
+  certifications: [
+    {
+      name: "Google Cloud Professional Machine Learning Engineer",
+      issuer: "Google Cloud",
+      badgeImage: "/badges/gcp-mle.png",
+      url: "https://www.credly.com/badges/c2d332c2-0a1d-4b3a-85b3-ac47a4b2316b",
+      category: "AI & Machine Learning"
+    },
+    {
+      name: "Google Cloud Professional Data Engineer",
+      issuer: "Google Cloud",
+      badgeImage: "/badges/gcp-pde.png",
+      url: "https://www.credly.com/badges/a753dc21-3d26-4890-b63a-ca406b3b53a9",
+      category: "Big Data & Lakehouses"
+    },
+    {
+      name: "HashiCorp Certified: Terraform Associate (002)",
+      issuer: "HashiCorp",
+      badgeImage: "/badges/terraform.png",
+      url: "https://www.credly.com/badges/144c15d7-5cc2-48b8-82d5-66b010636512/linked_in_profile",
+      category: "Infrastructure as Code"
+    },
+    {
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services (AWS)",
+      badgeImage: "/badges/aws-ccp.png",
+      url: "https://www.credly.com/badges/e9921303-12cd-4e8d-8ac2-0fad65cc8c7a/public_url",
+      category: "Cloud Architecture"
+    }
+  ] as CertificationItem[],
 
   experience: [
     {

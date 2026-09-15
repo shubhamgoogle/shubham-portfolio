@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
-import { Database, Brain, Cloud } from "lucide-react";
+import { Database, Brain, Cloud, Award, ExternalLink } from "lucide-react";
 
 export default function SkillsMatrix() {
   const categoryIcons = [
@@ -73,6 +74,70 @@ export default function SkillsMatrix() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Professional Certifications Sub-section */}
+        <div className="mt-16 pt-12 border-t border-gray-200/80">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#007a7a] uppercase tracking-wider mb-2">
+                <Award className="w-4 h-4" />
+                <span>Verified Credentials</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
+                Professional Certifications
+              </h3>
+            </div>
+            <p className="text-xs text-gray-500 max-w-md sm:text-right">
+              Globally accredited certifications in enterprise machine learning, distributed data engineering, cloud infrastructure, and automation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {portfolioData.certifications.map((cert) => (
+              <a
+                key={cert.name}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-xl border border-gray-200 p-5 flex flex-col justify-between shadow-xs hover:border-[#007a7a]/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <div>
+                  {/* Badge Image & Category */}
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <div className="w-14 h-14 relative flex-shrink-0 bg-gray-50 rounded-lg p-1 border border-gray-100 group-hover:scale-105 transition-transform duration-300">
+                      <Image
+                        src={cert.badgeImage}
+                        alt={cert.name}
+                        fill
+                        sizes="56px"
+                        className="object-contain p-1"
+                      />
+                    </div>
+                    {cert.category && (
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200/80 text-right">
+                        {cert.category}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Title & Issuer */}
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-[#007a7a] transition-colors leading-snug line-clamp-2 mb-1.5">
+                    {cert.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 font-medium">
+                    {cert.issuer}
+                  </p>
+                </div>
+
+                {/* Footer Link */}
+                <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-[#007a7a] font-medium">
+                  <span>Verify on Credly</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

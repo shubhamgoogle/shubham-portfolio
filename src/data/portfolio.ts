@@ -62,6 +62,7 @@ export const portfolioData = {
     company: "Google",
     location: "Hyderabad, India",
     bio: "Specializing in enterprise Big Data lakehouse architectures, distributed data processing, and autonomous multi-agent LLM systems for major banks and financial institutions.",
+    avatar: "/profile.jpg",
     statusBadge: "AI & Data Engineer @ Google",
     terminalIntro: "Architecting resilient data pipelines & autonomous agent loops.",
     github: "https://github.com/shubhamgoogle",
